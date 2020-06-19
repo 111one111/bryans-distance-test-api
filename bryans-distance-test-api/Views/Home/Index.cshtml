@@ -1,0 +1,29 @@
+﻿@model List<TravelPoints>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <table style="width:900px">
+        <thead>
+            <tr><th>Travel ID</th><th>Distance</th><th>Latitude</th><th>Longitude</th></tr>
+        </thead>
+        <tbody>
+            @foreach(var travel in Model){
+            <tr>
+                <td>@Html.DisplayFor(m => travel.LocationId)</td>
+                <td>@Html.DisplayFor(m => travel.TraveledDistance)</td>
+            </tr>
+
+                @foreach(var coord in travel.Points){
+                <tr>
+                    <td colspan="2"></td>
+                    <td>@Html.DisplayFor(m => coord.Latitude)</td>
+                    <td>@Html.DisplayFor(m => coord.Longitude)</td>               
+                </tr>
+                }
+            }        
+        </tbody>
+    </table>
+</div>

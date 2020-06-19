@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Travel]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [LocationId] VARCHAR(100) NOT NULL, 
+    [TotalKm] FLOAT NOT NULL	
+)
